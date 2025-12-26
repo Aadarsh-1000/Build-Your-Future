@@ -14,4 +14,4 @@ Open `index.html` in a modern browser (Chrome, Edge, or Safari).
 To inspire confidence and showcase modern front-end UI/UX skills.
 
 ## 👤 Author
-**K**
+**K.Aadarsh**
