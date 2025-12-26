@@ -1,6 +1,6 @@
-#  CareerPath
+# BYF{BUILD YOUR FUTURE}
 
-CareerPath is a modern, interactive website built to motivate and guide individuals who feel late in starting or rebuilding their careers.
+BUILD YOUR FUTURE is a modern, interactive website built to motivate and guide individuals who feel late in starting or rebuilding their careers.
 
 
 ## 🛠️ Tech Stack
