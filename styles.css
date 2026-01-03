@@ -7,6 +7,7 @@ body {
     font-family: 'Exo', sans-serif;
 }
 
+
 /* BACKGROUND */
 .bg {
     position: fixed;
@@ -131,20 +132,123 @@ strong {
     -webkit-text-fill-color: transparent;
 }
 
-/* BUTTON */
+/* ================= SUPERCHARGED BUTTON ================= */
 .button {
     position: absolute;
     top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 12px 24px;
+
+    padding: 14px 34px;
     font-size: 1rem;
-    color: white;
-    background: linear-gradient(90deg, #00f2ff, #0080ff);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+
+    background: linear-gradient(
+        120deg,
+        #00f2ff,
+        #0080ff,
+        #6f00ff,
+        #00f2ff
+    );
+    background-size: 300% 300%;
+
     border: none;
-    border-radius: 10px;
+    border-radius: 999px;
     cursor: pointer;
     z-index: 5;
+
+    box-shadow:
+        0 0 20px rgba(0, 242, 255, 0.6),
+        0 0 45px rgba(111, 0, 255, 0.35),
+        inset 0 0 10px rgba(255, 255, 255, 0.15);
+
+    transition:
+        transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.35s ease,
+        letter-spacing 0.35s ease;
+
+    animation: gradientFlow 6s ease infinite;
+    overflow: hidden;
+}
+
+/* ---------- Neon Aura Ring ---------- */
+.button::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    background: linear-gradient(
+        120deg,
+        #00f2ff,
+        #6f00ff,
+        #00f2ff
+    );
+    filter: blur(18px);
+    opacity: 0.75;
+    z-index: -1;
+    animation: pulseGlow 2.8s ease-in-out infinite;
+}
+
+/* ---------- Hover Shine Sweep ---------- */
+.button::after {
+    content: "";
+    position: absolute;
+    top: -120%;
+    left: -60%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.45),
+        transparent
+    );
+    transform: rotate(25deg);
+    transition: 0.6s ease;
+}
+
+/* ---------- Hover ---------- */
+.button:hover {
+    transform: translate(-50%, -55%) scale(1.08);
+    letter-spacing: 1.2px;
+
+    box-shadow:
+        0 0 30px rgba(0, 242, 255, 0.9),
+        0 0 70px rgba(111, 0, 255, 0.7),
+        inset 0 0 18px rgba(255, 255, 255, 0.25);
+}
+
+.button:hover::after {
+    top: -40%;
+    left: -20%;
+}
+
+/* ---------- Click Shock ---------- */
+.button:active {
+    transform: translate(-50%, -50%) scale(0.95);
+    box-shadow:
+        0 0 18px rgba(0, 242, 255, 0.9),
+        inset 0 0 25px rgba(0, 0, 0, 0.35);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.6;
+        filter: blur(16px);
+    }
+    50% {
+        opacity: 1;
+        filter: blur(24px);
+    }
 }
 
 /* SCROLL CONTENT */
@@ -204,6 +308,16 @@ p {
 
     text-align: left;
     /* ✅ correct property */
+}
+
+.sub-text.emphasis {
+    font-weight: 600;
+    background: linear-gradient(90deg, #00f2ff, #0080ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 5%;
+    min-width: 50%;
+
 }
 
 
